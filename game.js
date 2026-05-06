@@ -518,10 +518,12 @@ document.querySelectorAll(".touch-button").forEach((button) => {
   const key = button.dataset.key;
   const press = (event) => {
     event.preventDefault();
+    button.setPointerCapture?.(event.pointerId);
     keys.add(key);
   };
   const release = (event) => {
     event.preventDefault();
+    button.releasePointerCapture?.(event.pointerId);
     keys.delete(key);
   };
   button.addEventListener("pointerdown", press);
