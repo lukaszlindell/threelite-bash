@@ -156,7 +156,7 @@ kbd {
   }
 }
 
-@media (hover: none), (pointer: coarse) {
+@media (hover: none), (pointer: coarse), (any-pointer: coarse) {
   .touch-controls {
     display: flex;
     gap: 8px;
