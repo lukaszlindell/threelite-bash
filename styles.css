@@ -1,0 +1,164 @@
+:root {
+  color-scheme: dark;
+  --ink: #f7f2df;
+  --panel: #222633;
+  --line: #6c7082;
+  --button: #f2c14e;
+  --button-ink: #291f1a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: #151923;
+  color: var(--ink);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  padding: 18px;
+}
+
+.shell {
+  width: min(100%, 1100px);
+}
+
+.game-wrap {
+  position: relative;
+  overflow: hidden;
+  border: 4px solid #0b0d12;
+  background: #0b0d12;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.34);
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 14px;
+  padding: 24px;
+  text-align: center;
+  background: rgba(11, 13, 18, 0.72);
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+.touch-controls {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  display: none;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.touch-button {
+  min-width: 48px;
+  width: 48px;
+  height: 48px;
+  min-height: 48px;
+  padding: 0;
+  border-color: rgba(11, 13, 18, 0.9);
+  background: rgba(242, 193, 78, 0.92);
+  font-size: 24px;
+  line-height: 1;
+  pointer-events: auto;
+  touch-action: manipulation;
+}
+
+.touch-button.jump {
+  margin-left: auto;
+}
+
+.overlay h1 {
+  margin: 0;
+  font-size: clamp(34px, 7vw, 78px);
+  letter-spacing: 0;
+  text-shadow: 0 5px 0 #713c2b, 0 9px 0 #0b0d12;
+}
+
+.overlay p {
+  margin: 0;
+  max-width: 34rem;
+  font-size: clamp(14px, 2.4vw, 20px);
+  color: #d9d3bd;
+}
+
+button {
+  min-width: 150px;
+  min-height: 44px;
+  border: 3px solid #0b0d12;
+  background: var(--button);
+  color: var(--button-ink);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 5px 0 #9c6e24;
+}
+
+button:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #9c6e24;
+}
+
+.hud-help {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 4px 0;
+  color: #d9d3bd;
+  font-size: 13px;
+}
+
+kbd {
+  display: inline-grid;
+  min-width: 22px;
+  height: 22px;
+  place-items: center;
+  padding: 0 5px;
+  border: 2px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.24);
+}
+
+@media (max-width: 620px) {
+  body {
+    padding: 8px;
+  }
+
+  .touch-controls {
+    display: flex;
+    gap: 8px;
+  }
+
+  .touch-button:nth-child(2) {
+    margin-right: auto;
+  }
+
+  .hud-help {
+    display: none;
+  }
+}
