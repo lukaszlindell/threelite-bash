@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Threelite Bash</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="game-wrap" aria-label="Threelite Bash game">
+        <canvas id="game" width="960" height="540"></canvas>
+        <div class="overlay" id="overlay">
+          <h1>Threelite Bash</h1>
+          <p>Help Norm jump through the boss gauntlet.</p>
+          <button id="startButton" type="button">Start Game</button>
+        </div>
+        <div class="touch-controls" aria-label="Touch controls">
+          <button class="touch-button" data-key="arrowleft" type="button" aria-label="Move left">←</button>
+          <button class="touch-button" data-key="arrowright" type="button" aria-label="Move right">→</button>
+          <button class="touch-button jump" data-key=" " type="button" aria-label="Jump">↑</button>
+        </div>
+      </section>
+      <section class="hud-help" aria-label="Controls">
+        <span><kbd>A</kbd>/<kbd>D</kbd> or <kbd>←</kbd>/<kbd>→</kbd> Move</span>
+        <span><kbd>W</kbd>/<kbd>↑</kbd>/<kbd>Space</kbd> Jump</span>
+        <span><kbd>P</kbd> Pause</span>
+        <span><kbd>R</kbd> Restart</span>
+      </section>
+    </main>
+    <script src="game.js"></script>
+  </body>
+</html>
